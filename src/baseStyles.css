@@ -14,34 +14,61 @@
     align-items: center;
 }
 
-.app-form{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.app-form input{
-    margin: 20px;
-}
-
-.app-form > input{
-    margin-top: 5px;
-}
-
 h1,h2,h3,h4,h5,h6{
     text-align: center;
+    color: #3895D3;
 }
 
 .welcome-title{
     font-size: 72px;
-    color: #3895D3;
+}
+
+div.card-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+    padding: 0px 20px;
+}
+
+div.app-card{
+    width: 35%;
+    padding: 0px 20px 10px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.app-card button{
+    background-color: #3895D3;
+    color: white;
+    padding: 6px;
+    border-radius: 3px;
+    margin: 5px;
+    box-shadow: none;
+    border: none;
+}
+
+div.app-card button:hover{
+    background-color: steelblue;
 }
 
 @media only screen and (max-width: 600px){
     .welcome-title{
         font-size: 36px;
     }
+
+    div.card-container{
+        flex-direction: column;
+    }
+
+    div.app-card{
+        width: 100%;
+    }
 }
+
+
+
 
 
 

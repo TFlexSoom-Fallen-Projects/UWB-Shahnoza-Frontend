@@ -5,6 +5,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Container from "@material-ui/core/Container";
 import ReactUploadImage from './Components/ReactUploadImage.jsx';
 import AppNavBar from "./Components/AppNavBar.jsx";
+import PictureOptionCard from "./Components/PictureOptionCard.jsx";
 
 import "./baseStyles.css";
 
@@ -17,8 +18,10 @@ export default function ShahnozaApplication() {
       <AppNavBar></AppNavBar>
       <Container maxWidth="lg" id="main-container">
         <WelcomeTitle text="Welcome to Shahnoza"/>
-        <TitleAnchor text="Take a Photo!" link="upload.html"/>
-        <UploadForm />
+        <Container className="card-container">
+          <UploadForm />
+          <PictureOptionCard />
+        </Container>
       </Container>
   </React.StrictMode>
   );
@@ -26,10 +29,6 @@ export default function ShahnozaApplication() {
 
 export function WelcomeTitle(props){
   return <h1 className="welcome-title">{props.text}</h1>;
-}
-
-export function TitleAnchor(props){
-  return <a className="title-anchor" href={props.link}>{props.text}</a>;
 }
 
 export function UploadForm(props){
