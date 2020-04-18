@@ -7,7 +7,7 @@ import ReactUploadImage from './ReactUploadImage.jsx';
 
 import "./baseStyles.css";
 
-var domainName = "localhost:8081";
+var domainName = "shahnoza.tech";
 
 export default function ShahnozaApplication() {
   return (

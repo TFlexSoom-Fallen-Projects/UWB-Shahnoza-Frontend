@@ -17,13 +17,11 @@ class ReactUploadImage extends React.Component {
     onFormSubmit(e) {
         e.preventDefault();
         const formData = new FormData();
-        formData.append('myimg', this.state.file);
+        formData.append('image', this.state.file);
+        formData.append('name', this.state.filename);
         const config = {
             headers: {
                 'content-type': 'multipart/form-data'
-            },
-            body: {
-                'name': this.state.filename
             }
         };
         axios.post(this.state.url, formData, config)
