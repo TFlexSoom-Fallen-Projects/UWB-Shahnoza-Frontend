@@ -8,6 +8,7 @@
 
 
 #main-container{
+    padding-top: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,6 +30,17 @@
 
 h1,h2,h3,h4,h5,h6{
     text-align: center;
+}
+
+.welcome-title{
+    font-size: 72px;
+    color: #3895D3;
+}
+
+@media only screen and (max-width: 600px){
+    .welcome-title{
+        font-size: 36px;
+    }
 }
 
 

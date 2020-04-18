@@ -3,16 +3,18 @@ import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Container from "@material-ui/core/Container";
-import ReactUploadImage from './ReactUploadImage.jsx';
+import ReactUploadImage from './Components/ReactUploadImage.jsx';
+import AppNavBar from "./Components/AppNavBar.jsx";
 
 import "./baseStyles.css";
 
-var domainName = "shahnoza.tech";
+var domainName = "http://localhost:8081";
 
 export default function ShahnozaApplication() {
   return (
   <React.StrictMode>
       <CssBaseline />
+      <AppNavBar></AppNavBar>
       <Container maxWidth="lg" id="main-container">
         <WelcomeTitle text="Welcome to Shahnoza"/>
         <TitleAnchor text="Take a Photo!" link="upload.html"/>
