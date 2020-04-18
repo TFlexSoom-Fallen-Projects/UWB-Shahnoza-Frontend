@@ -1,0 +1,35 @@
+/*
+ * Tristan Hilbert
+ * 4/17/2020
+ * Stylesheet module
+ *
+ */
+
+
+
+#main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.app-form{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.app-form input{
+    margin: 20px;
+}
+
+.app-form > input{
+    margin-top: 5px;
+}
+
+h1,h2,h3,h4,h5,h6{
+    text-align: center;
+}
+
+
+
