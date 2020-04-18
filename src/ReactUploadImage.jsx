@@ -11,7 +11,7 @@ class ReactUploadImage extends React.Component {
         };
         this.onFormSubmit = this.onFormSubmit.bind(this);
         this.onChangeFile = this.onChangeFile.bind(this);
-        this.onChangeName = this.onChangeName.bind(this);
+        this.formClass = props.formClass;
     }
 
     onFormSubmit(e) {
@@ -31,19 +31,19 @@ class ReactUploadImage extends React.Component {
     }
 
     onChangeFile(e) {
-        this.setState({ file: e.target.files[0] });
-    }
-
-    onChangeName(e) {
-        this.setState({ filename: e.target.value });
+        e.persist()
+        console.log(e);
+        this.setState({ 
+            file: e.target.files[0] ,
+            filename: e.target.value
+        });
     }
 
     render() {
         return (
-            <form onSubmit={this.onFormSubmit}>
+            <form className={this.formClass} onSubmit={this.onFormSubmit}>
                 <h1>File Upload</h1>
                 <input type="file" name="myimg" onChange={this.onChangeFile} />
-                <input type="text" name="imgname" onChange={this.onChangeName} />
                 <button type="submit">Upload</button>
             </form>
         )

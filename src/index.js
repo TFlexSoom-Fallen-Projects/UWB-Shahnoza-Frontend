@@ -7,7 +7,7 @@ import ReactUploadImage from './ReactUploadImage.jsx';
 
 import "./baseStyles.css";
 
-var domainName = "http://localhost:3000";
+var domainName = "localhost:8081";
 
 export default function ShahnozaApplication() {
   return (
@@ -32,7 +32,7 @@ export function TitleAnchor(props){
 
 export function UploadForm(props){
   return (
-    <ReactUploadImage url={domainName + "/upload"} />
+    <ReactUploadImage url={domainName + "/upload"} formClass="app-form" />
   );
 }
 
