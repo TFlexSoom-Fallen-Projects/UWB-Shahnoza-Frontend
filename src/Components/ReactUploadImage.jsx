@@ -42,7 +42,7 @@ class ReactUploadImage extends React.Component {
 
     render() {
         return (
-        <div style={{'text-align': 'center'}}>
+        <div style={{textAlign: 'center'}}>
             <form className={"app-form upload-form"} onSubmit={this.onFormSubmit}>
                 <ButtonGroup className="upload-form">
                     <IconButton className="upload-buttons" onClick={this.onClick}>

@@ -102,8 +102,6 @@ class PhotoDrawer extends React.Component{
             <div>
                 <img src={this.state.dataUri} className="drawer-cam drawer-cam-preview" alt={"Shows your cute self! Or whatever is captured in the camera!"}/> 
                 <Container size="sm" className="drawer-button-container">
-                    {/*<Button onClick={this.pictureSubmit}>Upload!</Button>
-                    <Button onClick={this.pictureRetake}>Retake!</Button>*/}
                     <IconButton className="upload-buttons" onClick={this.pictureSubmit}>
                         <CheckIcon color='primary' className="entericon" />
                     </IconButton>

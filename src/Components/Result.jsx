@@ -45,7 +45,7 @@ const styles = {
         paddingBottom: "3rem",
         paddingLeft: "1rem",
         paddingRight: "1rem",
-        "text-align":"center"
+        textAlign:"center"
     },
     media: {
         width: "10rem", 
