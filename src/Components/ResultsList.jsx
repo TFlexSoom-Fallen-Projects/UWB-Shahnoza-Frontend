@@ -7,7 +7,12 @@
 
 import React from "react";
 import Grid from "@material-ui/core/Grid";
-import Result from './Result';
+//import Result from './Result';
+import Card from '@material-ui/core/Card';
+import CardMedia from '@material-ui/core/CardMedia';
+import CardContent from '@material-ui/core/CardContent';
+
+import Link from '@material-ui/core/Link';
 import { Typography, Fade, Container } from "@material-ui/core";
 
 class ResultsList extends React.Component{
@@ -17,6 +22,7 @@ class ResultsList extends React.Component{
         // TYPE :: listOfResults :: []
         this.state = {
             results: props.results,
+            //resItems: [],
             error: ""
         }
 
@@ -28,7 +34,19 @@ class ResultsList extends React.Component{
             this.setState({error: "Sorry. No Objects found! We know not being able to spend money is sad :(... so try searching for something else!"})
         }
         console.log("ARRIVED" + newResults)
-        this.setState({results: newResults})
+        var sortByPrice = (a, b) => {
+            var aprice = a.price
+            var bprice = b.price
+            aprice = parseFloat(aprice.substr(1, aprice.length - 1))
+            bprice = parseFloat(bprice.substr(1, bprice.length - 1))
+            return aprice - bprice
+        }
+        this.setState({
+            results: newResults/*,
+            resItems: newResults.sort(sortByPrice).map((res, index) => {
+                return (<Result {...res} />)
+            })*/
+        })
         //this.forceUpdate()
         /*var resultsItems = this.state.results.sort(sortByPrice).map((result, index) => {
             return (<Result {...result} />)
@@ -37,8 +55,48 @@ class ResultsList extends React.Component{
     }
 
     render(){
+
+    const styles = {
+        card: {
+            width: "50rem",
+            height: "30rem",
+            paddingTop: "3rem",
+            paddingBottom: "3rem",
+            paddingLeft: "1rem",
+            paddingRight: "1rem",
+            textAlign: "center"
+        },
+        media: {
+            width: "10rem",
+            height: "15rem",
+            padding: "20px"
+        },
+        header: {
+        },
+        content: {
+            "max-width": 200,
+            "max-height": 50
+        }
+    }
         var resultsItems = this.state.results.sort(sortByPrice).map((result, index) => {
-            return (<Result {... result} />)
+            return (
+                <Grid item xs={3} style={styles.card}>
+                    <Card className="card" >
+                        <CardMedia
+                            title={result.name}
+                        >
+                            <img style={styles.media} src={result.imgsrc} align="center"></img>
+                        </CardMedia>
+                        <CardContent>
+                            <Link href={result.url}>
+                                <Typography component="h" href={result.url}>{result.name}</Typography>
+                            </Link>
+                            <Typography component="p" color="textSecondary">
+                                {result.price}
+                            </Typography>
+                        </CardContent>
+                    </Card>
+                </Grid>)
         });
         //console.log("new resitems " + resultsItems, resultsItems[0], resultsItems.length)
         var sortByPrice = (a, b) => {
@@ -60,7 +118,6 @@ class ResultsList extends React.Component{
             )
         }
     }
-
 
 
     

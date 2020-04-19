@@ -22,6 +22,7 @@ function newResults(results){
   //resultsList.current.changeResults(testoutput);
   if(results === null){
     console.error("No Results!");
+    resultsList.current.changeResults([]);
     return;
   }
   console.log(results.data);
