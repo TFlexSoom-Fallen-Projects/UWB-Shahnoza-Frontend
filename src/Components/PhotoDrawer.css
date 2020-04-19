@@ -14,8 +14,59 @@
     border-radius: 8px;
 }
 
+.drawer-photo-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+div.drawer-button-container{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px 0px;
+}
+
+div.drawer-button-container button{
+    background-color: #3895D3;
+    color: white;
+}
+div.drawer-button-container button:hover{
+    background-color: steelblue;
+}
+
+.drawer-cam{
+    max-width: 1000px;
+}
+
+.drawer-cam-preview{
+    margin: 10px;
+    display: block;
+    width: 100%;
+}
+
 @media only screen and (max-width: 600px){
     .drawer-photo-container{
         height: 600px;
+    }
+
+    div.drawer-button-container{
+        flex-direction: column;
+    }
+
+    div.drawer-button-container button{
+        margin: 10px 0px;
+    }
+
+    #container-circles{
+        bottom: initial;
+    }
+
+    #outer-circle {
+        background-color: #00000034;
+    }
+
+    #inner-circle {
+        background-color: skyblue;
     }
 }
