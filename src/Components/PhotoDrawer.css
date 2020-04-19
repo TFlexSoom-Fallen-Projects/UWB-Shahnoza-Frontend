@@ -28,7 +28,7 @@ div.drawer-button-container{
 }
 
 div.drawer-button-container button{
-    background-color: #3895D3;
+    background-color: rgba(129, 129, 129, 0.685);
     color: white;
 }
 div.drawer-button-container button:hover{
