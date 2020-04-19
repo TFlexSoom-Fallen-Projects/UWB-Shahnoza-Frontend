@@ -5,6 +5,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Container from "@material-ui/core/Container";
 import ReactUploadImage from './Components/ReactUploadImage.jsx';
 import AppNavBar from "./Components/AppNavBar.jsx";
+import AppFooter from "./Components/AppFooter.jsx";
 import PhotoDrawer from "./Components/PhotoDrawer";
 import ResultsList from "./Components/ResultsList";
 import Typography from '@material-ui/core/Typography';
@@ -43,6 +44,7 @@ export default function ShahnozaApplication() {
         <ResultsList results={[]} ref={resultsList}  />
         <PhotoDrawer ref={photoDrawer} url={domainName + "/upload"} onResponse={newResults}/>
       </Container>
+      <AppFooter />
   </React.StrictMode>
   );
 }
