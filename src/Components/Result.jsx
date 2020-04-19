@@ -16,33 +16,34 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import Link from '@material-ui/core/Link';
+import Box from '@material-ui/core/Box';
 
 function Result(props) {
-    const [name, setName] = useState(props.name)
+    var [name, setName] = useState(props.name)
     const [url, setUrl] = useState(props.url)
     const [price, setPrice] = useState(props.price)
     const [img, setImg] = useState(props.imgsrc)
+    
+    if (name.length > 55) {
+        name = name.substring(0, 55) + "..."
+    }
 
     return (
     <Grid item xs={4} style={styles.card}>
-        <Card className="card">
-            <CardHeader
-                /*action={
-                    <IconButton aria-label="settings">
-                        <MoreVertIcon />
-                    </IconButton>
-                }
-                style={styles.header}
-                title={name}*/
-                subheader={price}
-            />
+        <Card className="card" >
             <CardMedia
                 title={name}
             >
-                <img style={styles.media} src={img}></img>
+                <img style={styles.media} src={img} align="center"></img>
             </CardMedia>
-            <CardContent style={styles.content}>
-                <Typography>{name}</Typography>
+            <CardContent>
+                <Link href={url}>
+                <Typography component="h" href={url}>{name}</Typography>
+                </Link>
+                <Typography component="p" color="textSecondary">
+                    {price}
+                </Typography>
             </CardContent>
         </Card>
     </Grid>
@@ -57,10 +58,12 @@ const styles = {
         paddingBottom: "3rem",
         paddingLeft: "4rem",
         paddingRight: "4rem",
+        "text-align":"center"
     },
     media: {
-        height: "20rem",
-        width: "20rem"
+        width: "10rem", 
+        height: "15rem",
+        padding:"20px"
     },
     header: {
     },
