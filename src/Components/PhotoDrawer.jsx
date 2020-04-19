@@ -100,8 +100,8 @@ class PhotoDrawer extends React.Component{
         
         const preview = (
             <div>
-                <img src={this.state.dataUri} className="drawer-cam drawer-cam-preview"/> 
-                <Container size="sm">
+                <img src={this.state.dataUri} className="drawer-cam drawer-cam-preview" alt={"Shows your cute self! Or whatever is captured in the camera!"}/> 
+                <Container size="sm" className="drawer-button-container">
                     <Button onClick={this.pictureSubmit}>Upload!</Button>
                     <Button onClick={this.pictureRetake}>Retake!</Button>
                 </Container>

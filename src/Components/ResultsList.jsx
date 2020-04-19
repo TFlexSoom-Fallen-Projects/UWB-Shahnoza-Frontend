@@ -34,7 +34,7 @@ class ResultsList extends React.Component{
             const resultsItems = this.state.results.map((result, index) => 
                 <Paper key={index} elevation={3}>
                     <a className="result-anchor-container" href={result.url}>
-                        <img className="result-pic" width="100%" src={result.imgsrc}></img>
+                        <img className="result-pic" width="100%" src={result.imgsrc} alt={"Shows the item: " + result.name + " for sale!"}></img>
                         <p className="result-name">{result.name}</p>
                         <p className="result-price">{result.price}</p>
                     </a>
