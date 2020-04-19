@@ -21,7 +21,7 @@ class ReactUploadImage extends React.Component {
 
     onFormSubmit(e) {
         e.preventDefault();
-        if(this.state.file !== null){
+        /*if(this.state.file !== null){
             const formData = new FormData();
             formData.append('image', this.state.file);
             const config = {
@@ -32,10 +32,10 @@ class ReactUploadImage extends React.Component {
             axios.post(this.state.url, formData, config)
                 .then((res) => {
                     console.log("The file is successfully uploaded: " + res);
-                    this.onResponse(res);
                 })
                 .catch(err => {});
-        }
+        }*/
+        this.onResponse();
     }
 
     onChangeFile(e) {

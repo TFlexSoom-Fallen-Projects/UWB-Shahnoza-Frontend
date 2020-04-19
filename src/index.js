@@ -8,16 +8,18 @@ import AppNavBar from "./Components/AppNavBar.jsx";
 import PictureOptionCard from "./Components/PictureOptionCard.jsx";
 import PhotoDrawer from "./Components/PhotoDrawer";
 import ResultsList from "./Components/ResultsList";
+import 'typeface-roboto';
 import "./baseStyles.css";
 
+import testoutput from './output.json'
 
-var domainName = "http://shahnoza.tech";
+var domainName = "104.248.238.48:8081";
 var photoDrawer = React.createRef(); // undefined until photo drawer instance
 var resultsList = React.createRef();
 
 function newResults(results){
-  console.log(results.data);
-  resultsList.current.changeResults(results.data);
+  console.log(testoutput);
+  resultsList.current.changeResults(testoutput);
 }
 
 function onClickChangeDrawer(e){

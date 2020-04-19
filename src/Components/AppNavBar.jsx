@@ -1,4 +1,5 @@
 import React from 'react';
+import Typography from '@material-ui/core/Typography';
 import "./AppNavBar.css";
 /*
 import Button from "@material-ui/core/Button";
@@ -9,16 +10,7 @@ class AppNavBar extends React.Component{
     render() {
         return (
             <div className="app-nav-bar">
-                <div className="app-nav-menu">
-                    {
-                    /*
-                        <Button disableElevation variant="contained" size="small">
-                            <MenuIcon />
-                        </Button>
-                    */
-                    }
-                </div>
-                <h3 className="app-nav-title">Shahnoza App</h3>
+                <Typography variant="h5" className="app-nav-title">UWBHacks #snza</Typography>
                 <div className="app-nav-container">
                     {this.props.children}
                 </div>
