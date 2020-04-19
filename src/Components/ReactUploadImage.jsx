@@ -1,9 +1,8 @@
 import React from 'react'
 import Card from "@material-ui/core/Card";
 import Button from "@material-ui/core/Button";
+import UploadUtil from "../Utility/UploadUtil"
 import "./ReactUploadImage.css";
-
-const axios = require("axios");
 
 class ReactUploadImage extends React.Component {
     constructor(props) {
@@ -22,19 +21,7 @@ class ReactUploadImage extends React.Component {
     onFormSubmit(e) {
         e.preventDefault();
         if(this.state.file !== null){
-            const formData = new FormData();
-            formData.append('image', this.state.file);
-            const config = {
-                headers: {
-                    'content-type': 'multipart/form-data'
-                }
-            };
-            axios.post(this.state.url, formData, config)
-                .then((res) => {
-                    console.log("The file is successfully uploaded: " + res);
-                    this.onResponse(res);
-                })
-                .catch(err => {});
+            UploadUtil.uploadImageToAPI(this.state.file, this.state.url, this.onResponse);
         }
     }
 

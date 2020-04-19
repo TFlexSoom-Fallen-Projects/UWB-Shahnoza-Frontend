@@ -1,0 +1,21 @@
+/*
+ * Tristan Hilbert
+ * 4/18/2020
+ * Photo Drawer Stylesheet
+ *
+ */
+
+.react-html5-camera-photo > div.display-error{
+    display: none;
+}
+
+.react-html5-camera-photo{
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+@media only screen and (max-width: 600px){
+    .drawer-photo-container{
+        height: 600px;
+    }
+}

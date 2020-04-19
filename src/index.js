@@ -11,11 +11,15 @@ import ResultsList from "./Components/ResultsList";
 import "./baseStyles.css";
 
 
-var domainName = "http://shahnoza.tech";
+var domainName = "http://www.shahnoza.tech";
 var photoDrawer = React.createRef(); // undefined until photo drawer instance
 var resultsList = React.createRef();
 
 function newResults(results){
+  if(results === null){
+    console.error("No Results!");
+    return;
+  }
   console.log(results.data);
   resultsList.current.changeResults(results.data);
 }
@@ -38,7 +42,7 @@ export default function ShahnozaApplication() {
         <Container maxWidth="md">
           <ResultsList results={[]} ref={resultsList}/>
         </Container>
-        <PhotoDrawer ref={photoDrawer}/>
+        <PhotoDrawer ref={photoDrawer} url={domainName + "/upload"} onResponse={newResults}/>
       </Container>
   </React.StrictMode>
   );
