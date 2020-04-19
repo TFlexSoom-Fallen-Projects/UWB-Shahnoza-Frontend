@@ -1,6 +1,9 @@
 import React from 'react'
 import Card from "@material-ui/core/Card";
 import Button from "@material-ui/core/Button";
+import IconButton from '@material-ui/core/IconButton';
+import SvgIcon from '@material-ui/core/SvgIcon';
+import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
 import "./ReactUploadImage.css";
 
 const axios = require("axios");
@@ -56,14 +59,17 @@ class ReactUploadImage extends React.Component {
 
     render() {
         return (
-            <Card className="app-card">
+            <IconButton aria-label="delete" width={200} height={200}>
+                <InsertDriveFileIcon />
+            </IconButton>
+            /*<Card className="app-card">
                 <form className={this.formClass + " upload-form"} onSubmit={this.onFormSubmit}>
                     <h1>File Upload</h1>
                     <Button variant="contained" onClick={this.onClick} className="file-label">{this.state.filename}</Button>
                     <input className="file-input" type="file" name="myimg" onChange={this.onChangeFile} />
                     <Button variant="contained" className="file-submit-button" type="submit">Upload</Button>
                 </form>
-            </Card>
+            </Card>*/
         )
     }
 }

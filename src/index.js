@@ -8,6 +8,7 @@ import AppNavBar from "./Components/AppNavBar.jsx";
 import PictureOptionCard from "./Components/PictureOptionCard.jsx";
 import PhotoDrawer from "./Components/PhotoDrawer";
 import ResultsList from "./Components/ResultsList";
+import Typography from '@material-ui/core/Typography';
 import 'typeface-roboto';
 import "./baseStyles.css";
 
@@ -30,9 +31,10 @@ export default function ShahnozaApplication() {
   return (
   <React.StrictMode>
       <CssBaseline />
-      <AppNavBar></AppNavBar>
+      <AppNavBar />
       <Container width="100%" id="main-container">
-        <WelcomeTitle text="Welcome to Shahnoza"/>
+        <Typography variant="h1">Welcome to #snza</Typography>
+        <Typography variant="h6">Upload a file or take a photo to begin.</Typography>
         <Container className="card-container">
           <ReactUploadImage onResponse={newResults} url={domainName + "/upload"} formClass="app-form" />
           <PictureOptionCard onClick={onClickChangeDrawer}/>
