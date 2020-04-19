@@ -8,6 +8,7 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
 import Result from './Result';
+import { Typography, Fade } from "@material-ui/core";
 
 class ResultsList extends React.Component{
     constructor(props){
@@ -15,13 +16,17 @@ class ResultsList extends React.Component{
 
         // TYPE :: listOfResults :: []
         this.state = {
-            results: props.results
+            results: props.results,
+            error: ""
         }
 
         this.changeResults = this.changeResults.bind(this);
     }
 
     changeResults(newResults){
+        if (newResults.length === 0) {
+            this.setState({error: "Sorry. No Objects found! We know not being able to spend money is sad :(... so try searching for something else!"})
+        }
         this.setState({results: newResults});
     }
 
@@ -40,9 +45,12 @@ class ResultsList extends React.Component{
                 <Result {... result} />
             );
             return (
-                <Grid container spacing={1} width="100%" flexDirection="row" flexWrap="wrap">
-                    {resultsItems}
-                </Grid>
+                    <div>
+                        <Typography variant="h1">{this.state.error}</Typography>
+                        <Grid container spacing={1} width="100%" flexDirection="row" flexWrap="wrap">
+                            {resultsItems}
+                        </Grid>
+                    </div>
             )
         }
     }

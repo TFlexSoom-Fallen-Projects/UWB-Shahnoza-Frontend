@@ -17,7 +17,7 @@ function Result(props) {
     }
 
     return (
-    <Grid item xs={4} style={styles.card}>
+    <Grid item xs={3} style={styles.card}>
         <Card className="card" >
             <CardMedia
                 title={name}
@@ -39,12 +39,12 @@ function Result(props) {
 
 const styles = {
     card: {
-        width: "25rem",
+        width: "50rem",
         height: "30rem",
         paddingTop: "3rem",
         paddingBottom: "3rem",
-        paddingLeft: "4rem",
-        paddingRight: "4rem",
+        paddingLeft: "1rem",
+        paddingRight: "1rem",
         "text-align":"center"
     },
     media: {

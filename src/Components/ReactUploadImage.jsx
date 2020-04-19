@@ -6,6 +6,7 @@ import ButtonGroup from '@material-ui/core/ButtonGroup';
 import InputIcon from '@material-ui/icons/Input';
 import UploadUtil from "../Utility/UploadUtil"
 import "./ReactUploadImage.css";
+import { Typography } from '@material-ui/core';
 
 class ReactUploadImage extends React.Component {
     constructor(props) {
@@ -41,7 +42,7 @@ class ReactUploadImage extends React.Component {
 
     render() {
         return (
-        <div>
+        <div style={{'text-align': 'center'}}>
             <form className={"app-form upload-form"} onSubmit={this.onFormSubmit}>
                 <ButtonGroup className="upload-form">
                     <IconButton className="upload-buttons" onClick={this.onClick}>
@@ -57,7 +58,7 @@ class ReactUploadImage extends React.Component {
                     <InputIcon color='secondary' className="entericon" />
                 </IconButton>
             </form>
-            <b>{this.state.filename}</b>
+            <Typography><b>{this.state.filename}</b></Typography>
         </div>
         )
     }
