@@ -59,8 +59,8 @@ class ReactUploadImage extends React.Component {
 
     render() {
         return (
-            <IconButton aria-label="delete" width={200} height={200}>
-                <InsertDriveFileIcon />
+            <IconButton width={200} height={200}>
+                <InsertDriveFileIcon className="bigicon" />
             </IconButton>
             /*<Card className="app-card">
                 <form className={this.formClass + " upload-form"} onSubmit={this.onFormSubmit}>
