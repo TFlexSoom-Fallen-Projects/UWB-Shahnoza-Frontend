@@ -34,6 +34,7 @@ class ResultsList extends React.Component{
 
             const resultsItems = this.state.results.map((result, index) => 
                 <Result {... result} />
+
                 /*<Paper key={index} elevation={3}>
                     <a className="result-anchor-container" href={result.url}>
                         <img className="result-pic" width="100%" src={result.imgsrc}></img>
@@ -44,7 +45,7 @@ class ResultsList extends React.Component{
             );
 
             return (
-                <Grid container spacing={3} width="100%">
+                <Grid container spacing={1} width="100%" flexDirection="row" flexWrap="wrap">
                     {resultsItems}
                 </Grid>
             )

@@ -14,7 +14,7 @@ import "./baseStyles.css";
 
 import testoutput from './output.json'
 
-var domainName = "104.248.238.48:8081";
+var domainName = "http://localhost.80";
 var photoDrawer = React.createRef(); // undefined until photo drawer instance
 var resultsList = React.createRef();
 
