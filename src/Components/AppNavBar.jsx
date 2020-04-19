@@ -1,5 +1,5 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
+import { Container, Typography } from '@material-ui/core/';
 import IconButton from '@material-ui/core/IconButton';
 import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
 import AddAPhotoIcon from '@material-ui/icons/AddAPhoto';
