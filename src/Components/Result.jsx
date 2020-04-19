@@ -1,23 +1,10 @@
 import React, { useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions';
-import Collapse from '@material-ui/core/Collapse';
 import Grid from "@material-ui/core/Grid";
-import Avatar from '@material-ui/core/Avatar';
-import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import { red } from '@material-ui/core/colors';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Link from '@material-ui/core/Link';
-import Box from '@material-ui/core/Box';
 
 function Result(props) {
     var [name, setName] = useState(props.name)
@@ -30,7 +17,7 @@ function Result(props) {
     }
 
     return (
-    <Grid item xs={4} style={styles.card}>
+    <Grid item xs={3} style={styles.card}>
         <Card className="card" >
             <CardMedia
                 title={name}
@@ -52,13 +39,13 @@ function Result(props) {
 
 const styles = {
     card: {
-        width: "25rem",
+        width: "50rem",
         height: "30rem",
         paddingTop: "3rem",
         paddingBottom: "3rem",
-        paddingLeft: "4rem",
-        paddingRight: "4rem",
-        "text-align":"center"
+        paddingLeft: "1rem",
+        paddingRight: "1rem",
+        textAlign:"center"
     },
     media: {
         width: "10rem", 

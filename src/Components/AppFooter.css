@@ -27,26 +27,26 @@
     z-index: 1000;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    vertical-align: middle;
-    padding: 5px;
+    align-items: top;
+    vertical-align: text-top;
     box-shadow: 0px -5px #d64161;
 }
 
 .app-nav-footer-title{
-    padding-left: 2rem;
-    font-size: 15px;
-    vertical-align: middle;
+    padding-left: 2%;
+    font-size: 1.5vw; 
+    vertical-align: text-top;
     color: white;
+    margin-top: 0.5%;
 }
 
 .app-nav-footer-desc{
-    padding-left: 2rem;
-    font-size: 13px;
-    vertical-align: middle;
+    padding-left: 2%;
+    font-size: 0.8vw;
+    vertical-align: top;
     max-width: 25%;
     color: rgba(255, 255, 255, 0.623);
-    
+    margin-top: 0.5%;
 }
 
 .app-nav-icon {
@@ -58,11 +58,11 @@
     border-radius: 10px;
 }
 
-@media only screen and (max-width: 600px){
-    .app-nav-title{
-        font-size: 14px;
+/*@media only screen and (max-width: 600px){
+    .app-nav-footer-title{
+        font-size: 10px;
     }
-}
+}*/
 
 .app-nav-container{
     flex: 4;

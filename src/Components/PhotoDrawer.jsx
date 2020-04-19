@@ -8,13 +8,13 @@
 import React from "react";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import Camera, {FACING_MODES} from 'react-html5-camera-photo';
-import Button from "@material-ui/core/Button";
+import IconButton from "@material-ui/core/IconButton";
 import Container from "@material-ui/core/Container"
 import UploadUtil from "../Utility/UploadUtil";
+import ReplayIcon from '@material-ui/icons/Replay';
+import CheckIcon from '@material-ui/icons/Check';
 import 'react-html5-camera-photo/build/css/index.css';
 import './PhotoDrawer.css';
-
-
 
 class PhotoDrawer extends React.Component{
     constructor(props){
@@ -49,7 +49,7 @@ class PhotoDrawer extends React.Component{
         console.log(file);
         UploadUtil.uploadImageToAPI(file, this.url, this.onResponse);
         this.openCloseDrawer();
-
+        document.getElementById("file-input")
     }
 
     pictureRetake(e){
@@ -102,8 +102,12 @@ class PhotoDrawer extends React.Component{
             <div>
                 <img src={this.state.dataUri} className="drawer-cam drawer-cam-preview" alt={"Shows your cute self! Or whatever is captured in the camera!"}/> 
                 <Container size="sm" className="drawer-button-container">
-                    <Button onClick={this.pictureSubmit}>Upload!</Button>
-                    <Button onClick={this.pictureRetake}>Retake!</Button>
+                    <IconButton className="upload-buttons" onClick={this.pictureSubmit}>
+                        <CheckIcon color='primary' className="entericon" />
+                    </IconButton>
+                    <IconButton className="upload-buttons" onClick={this.pictureRetake}>
+                        <ReplayIcon color='secondary' className="entericon" />
+                    </IconButton>
                 </Container>
             </div>
         );

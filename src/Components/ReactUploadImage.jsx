@@ -4,7 +4,9 @@ import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
 import AddAPhotoIcon from '@material-ui/icons/AddAPhoto';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import InputIcon from '@material-ui/icons/Input';
+import UploadUtil from "../Utility/UploadUtil"
 import "./ReactUploadImage.css";
+import { Typography } from '@material-ui/core';
 
 class ReactUploadImage extends React.Component {
     constructor(props) {
@@ -22,7 +24,9 @@ class ReactUploadImage extends React.Component {
 
     onFormSubmit(e) {
         e.preventDefault();
-        this.onResponse();
+        if (this.state.file !== null) {
+            UploadUtil.uploadImageToAPI(this.state.file, this.state.url, this.onResponse);
+        }
     }
 
     onChangeFile(e) {
@@ -38,8 +42,8 @@ class ReactUploadImage extends React.Component {
 
     render() {
         return (
-        <div>
-            <form className={this.formClass + " upload-form"} onSubmit={this.onFormSubmit}>
+        <div style={{textAlign: 'center'}}>
+            <form className={"app-form upload-form"} onSubmit={this.onFormSubmit}>
                 <ButtonGroup className="upload-form">
                     <IconButton className="upload-buttons" onClick={this.onClick}>
                         <InsertDriveFileIcon className="bigicon" />
@@ -51,10 +55,10 @@ class ReactUploadImage extends React.Component {
                 </ButtonGroup>
 
                 <IconButton className="upload-buttons" type="submit">
-                    <InputIcon color='primary' className="entericon" />
+                    <InputIcon color='secondary' className="entericon" />
                 </IconButton>
             </form>
-            <b>{this.state.filename}</b>
+            <Typography><b>{this.state.filename}</b></Typography>
         </div>
         )
     }

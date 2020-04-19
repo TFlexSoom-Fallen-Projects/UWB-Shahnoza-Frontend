@@ -7,8 +7,12 @@
 
 import React from "react";
 import Grid from "@material-ui/core/Grid";
-import Result from './Result';
-import Paper from "@material-ui/core/Paper";
+import Card from '@material-ui/core/Card';
+import CardMedia from '@material-ui/core/CardMedia';
+import CardContent from '@material-ui/core/CardContent';
+
+import Link from '@material-ui/core/Link';
+import { Typography, Fade, Container } from "@material-ui/core";
 
 class ResultsList extends React.Component{
     constructor(props){
@@ -16,42 +20,93 @@ class ResultsList extends React.Component{
 
         // TYPE :: listOfResults :: []
         this.state = {
-            results: props.results
+            results: props.results,
+            error: ""
         }
 
         this.changeResults = this.changeResults.bind(this);
     }
 
     changeResults(newResults){
-        this.setState({results: newResults});
+        if (newResults.length === 0) {
+            this.setState({error: "Sorry. No Objects found! We know not being able to spend money is sad :(... so try searching for something else!"})
+        }
+        console.log("ARRIVED" + newResults)
+        var sortByPrice = (a, b) => {
+            var aprice = a.price
+            var bprice = b.price
+            aprice = parseFloat(aprice.substr(1, aprice.length - 1))
+            bprice = parseFloat(bprice.substr(1, bprice.length - 1))
+            return aprice - bprice
+        }
+        this.setState({
+            results: newResults
+        })
     }
 
-
     render(){
-        if(this.state.results.length === 0){
-            return null;
-        }else{
 
-            const resultsItems = this.state.results.map((result, index) => 
-                <Result {... result} />
-
-                /*<Paper key={index} elevation={3}>
-                    <a className="result-anchor-container" href={result.url}>
-                        <img className="result-pic" width="100%" src={result.imgsrc} alt={"Shows the item: " + result.name + " for sale!"}></img>
-                        <p className="result-name">{result.name}</p>
-                        <p className="result-price">{result.price}</p>
-                    </a>
-                </Paper> */
-            );
-
+    const styles = {
+        card: {
+            width: "50rem",
+            height: "30rem",
+            paddingTop: "3rem",
+            paddingBottom: "3rem",
+            paddingLeft: "1rem",
+            paddingRight: "1rem",
+            textAlign: "center"
+        },
+        media: {
+            width: "10rem",
+            height: "15rem",
+            padding: "20px"
+        },
+        header: {
+        },
+        content: {
+            "max-width": 200,
+            "max-height": 50
+        }
+    }
+        var resultsItems = this.state.results.sort(sortByPrice).map((result, index) => {
             return (
-                <Grid container spacing={1} width="100%" flexDirection="row" flexWrap="wrap">
-                    {resultsItems}
-                </Grid>
+                <Grid item xs={3} style={styles.card}>
+                    <Card className="card" >
+                        <CardMedia
+                            title={result.name}
+                        >
+                            <img style={styles.media} src={result.imgsrc} align="center"></img>
+                        </CardMedia>
+                        <CardContent>
+                            <Link href={result.url}>
+                                <Typography component="h" href={result.url}>{result.name}</Typography>
+                            </Link>
+                            <Typography component="p" color="textSecondary">
+                                {result.price}
+                            </Typography>
+                        </CardContent>
+                    </Card>
+                </Grid>)
+        })
+        var sortByPrice = (a, b) => {
+            var aprice = a.price
+            var bprice = b.price
+            aprice = parseFloat(aprice.substr(1, aprice.length - 1))
+            bprice = parseFloat(bprice.substr(1, bprice.length - 1))
+            return aprice - bprice
+        }
+        if(this.state.results.length === 0){
+            return (<Container><p style={{ fontSize: '4vw' }}>{this.state.error}</p></Container>)
+        }else{
+            return (
+                <div>
+                    <Grid container spacing={1} width="100%">
+                        {resultsItems}
+                    </Grid>
+                </div>
             )
         }
     }
-
 
 
     
