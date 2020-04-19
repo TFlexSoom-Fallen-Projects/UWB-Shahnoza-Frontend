@@ -14,8 +14,6 @@ import UploadUtil from "../Utility/UploadUtil";
 import 'react-html5-camera-photo/build/css/index.css';
 import './PhotoDrawer.css';
 
-
-
 class PhotoDrawer extends React.Component{
     constructor(props){
         super(props);
