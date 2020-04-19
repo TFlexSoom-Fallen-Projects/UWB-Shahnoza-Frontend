@@ -21,6 +21,12 @@ var resultsList = React.createRef();
 function newResults(results){
   console.log(testoutput);
   resultsList.current.changeResults(testoutput);
+  /*if(results === null){
+    console.error("No Results!");
+    return;
+  }
+  console.log(results.data);
+  resultsList.current.changeResults(results.data);*/
 }
 
 function onClickChangeDrawer(e){
@@ -39,8 +45,10 @@ export default function ShahnozaApplication() {
           <ReactUploadImage onResponse={newResults} url={domainName + "/upload"} formClass="app-form" />
           <PictureOptionCard onClick={onClickChangeDrawer}/>
         </Container>
-        <ResultsList results={[]} ref={resultsList}/>
-        <PhotoDrawer ref={photoDrawer}/>
+        <Container maxWidth="md">
+          <ResultsList results={[]} ref={resultsList}/>
+        </Container>
+        <PhotoDrawer ref={photoDrawer} url={domainName + "/upload"} onResponse={newResults}/>
       </Container>
   </React.StrictMode>
   );

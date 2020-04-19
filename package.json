@@ -12,8 +12,9 @@
     "form-data": "^3.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1",
-    "typeface-roboto": "0.0.75"
+    "typeface-roboto": "0.0.75",
+    "react-html5-camera-photo": "^1.5.4",
+    "react-scripts": "3.4.1"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -4,9 +4,8 @@ import Button from "@material-ui/core/Button";
 import IconButton from '@material-ui/core/IconButton';
 import SvgIcon from '@material-ui/core/SvgIcon';
 import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
+import UploadUtil from "../Utility/UploadUtil"
 import "./ReactUploadImage.css";
-
-const axios = require("axios");
 
 class ReactUploadImage extends React.Component {
     constructor(props) {
@@ -37,6 +36,9 @@ class ReactUploadImage extends React.Component {
                     console.log("The file is successfully uploaded: " + res);
                 })
                 .catch(err => {});
+        }
+        if(this.state.file !== null){
+            UploadUtil.uploadImageToAPI(this.state.file, this.state.url, this.onResponse);
         }*/
         this.onResponse();
     }
