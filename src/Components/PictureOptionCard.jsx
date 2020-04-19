@@ -12,11 +12,17 @@
  import Button from "@material-ui/core/Button";
 
  class PictureOptionCard extends React.Component{
+    constructor(props){
+        super(props);
+
+        this.onClick = props.onClick;
+    }
+
      render(){
          return (
             <Card className="app-card">
                 <h1>Take a Picture!</h1>
-                <Button variant="contained">New Photo!</Button>
+                <Button variant="contained" onClick={this.onClick}>New Photo!</Button>
             </Card>
          );
      }

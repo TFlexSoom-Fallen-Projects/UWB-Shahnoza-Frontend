@@ -21,6 +21,8 @@ h1,h2,h3,h4,h5,h6{
 
 .welcome-title{
     font-size: 72px;
+    font-family: Palatino, "Palatino LT STD", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+    color: steelblue;
 }
 
 div.card-container{
@@ -60,10 +62,12 @@ div.app-card button:hover{
 
     div.card-container{
         flex-direction: column;
+        justify-content: initial;
     }
 
     div.app-card{
         width: 100%;
+        margin-bottom: 100px;
     }
 }
 
