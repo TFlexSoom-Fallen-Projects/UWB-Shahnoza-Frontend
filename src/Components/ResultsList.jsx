@@ -7,7 +7,6 @@
 
 import React from "react";
 import Grid from "@material-ui/core/Grid";
-//import Result from './Result';
 import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
@@ -22,7 +21,6 @@ class ResultsList extends React.Component{
         // TYPE :: listOfResults :: []
         this.state = {
             results: props.results,
-            //resItems: [],
             error: ""
         }
 
@@ -42,16 +40,8 @@ class ResultsList extends React.Component{
             return aprice - bprice
         }
         this.setState({
-            results: newResults/*,
-            resItems: newResults.sort(sortByPrice).map((res, index) => {
-                return (<Result {...res} />)
-            })*/
+            results: newResults
         })
-        //this.forceUpdate()
-        /*var resultsItems = this.state.results.sort(sortByPrice).map((result, index) => {
-            return (<Result {...result} />)
-        })*/
-        //this.setState({resItems: })
     }
 
     render(){
@@ -97,8 +87,7 @@ class ResultsList extends React.Component{
                         </CardContent>
                     </Card>
                 </Grid>)
-        });
-        //console.log("new resitems " + resultsItems, resultsItems[0], resultsItems.length)
+        })
         var sortByPrice = (a, b) => {
             var aprice = a.price
             var bprice = b.price
