@@ -13,7 +13,6 @@ function AppNavBar(props) {
     return (
         <div className="app-nav-bar">
             <Typography variant="h5" className="app-nav-title">UWBHacks #snza</Typography>
-
             <IconButton className="app-nav-icon" onClick={props.upload}>
                 <InsertDriveFileIcon />
             </IconButton>

@@ -41,12 +41,12 @@ export default function ShahnozaApplication() {
       <Container width="100%" id="main-container">
         <Typography variant="h1">Welcome to #snza</Typography>
         <Typography variant="h6">Upload a file or take a photo to begin.</Typography>
-        <Container className="card-container">
-          <ReactUploadImage onResponse={newResults} url={domainName + "/upload"} formClass="app-form" />
-          <PictureOptionCard onClick={onClickChangeDrawer}/>
-        </Container>
+          <ReactUploadImage onResponse={newResults} onCameraClick={onClickChangeDrawer} url={domainName + "/upload"} formClass="app-form" />
+          {/*
+        <Container className="card-container"><PictureOptionCard/></Container>*/}
+        
         <Container maxWidth="md">
-          <ResultsList results={[]} ref={resultsList}/>
+          <ResultsList results={[]} ref={resultsList}  />
         </Container>
         <PhotoDrawer ref={photoDrawer} url={domainName + "/upload"} onResponse={newResults}/>
       </Container>
