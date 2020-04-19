@@ -7,6 +7,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import Collapse from '@material-ui/core/Collapse';
+import Grid from "@material-ui/core/Grid";
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
@@ -23,26 +24,50 @@ function Result(props) {
     const [img, setImg] = useState(props.imgsrc)
 
     return (
-    <Card className="card">
-        <CardHeader
-            action={
-                <IconButton aria-label="settings">
-                    <MoreVertIcon />
-                </IconButton>
-            }
-            title={name}
-            subheader="September 14, 2016"
-        />
-        <CardMedia
-            className='media'
-            src={img}
-            height={100}
-            title="Paella dish"
-        />
-        <CardContent>
-        </CardContent>
-    </Card>
+    <Grid item xs={4} style={styles.card}>
+        <Card className="card">
+            <CardHeader
+                /*action={
+                    <IconButton aria-label="settings">
+                        <MoreVertIcon />
+                    </IconButton>
+                }
+                style={styles.header}
+                title={name}*/
+                subheader={price}
+            />
+            <CardMedia
+                title={name}
+            >
+                <img style={styles.media} src={img}></img>
+            </CardMedia>
+            <CardContent style={styles.content}>
+                <Typography>{name}</Typography>
+            </CardContent>
+        </Card>
+    </Grid>
     );
+}
+
+const styles = {
+    card: {
+        width: "25rem",
+        height: "30rem",
+        paddingTop: "3rem",
+        paddingBottom: "3rem",
+        paddingLeft: "4rem",
+        paddingRight: "4rem",
+    },
+    media: {
+        height: "20rem",
+        width: "20rem"
+    },
+    header: {
+    },
+    content: {
+        "max-width": 200,
+        "max-height": 50
+    }
 }
 
 export default Result;

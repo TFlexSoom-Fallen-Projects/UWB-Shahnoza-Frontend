@@ -31,15 +31,13 @@ export default function ShahnozaApplication() {
   <React.StrictMode>
       <CssBaseline />
       <AppNavBar></AppNavBar>
-      <Container maxWidth="lg" id="main-container">
+      <Container width="100%" id="main-container">
         <WelcomeTitle text="Welcome to Shahnoza"/>
         <Container className="card-container">
-        <ReactUploadImage onResponse={newResults} url={domainName + "/upload"} formClass="app-form" />
+          <ReactUploadImage onResponse={newResults} url={domainName + "/upload"} formClass="app-form" />
           <PictureOptionCard onClick={onClickChangeDrawer}/>
         </Container>
-        <Container maxWidth="md">
-          <ResultsList results={[]} ref={resultsList}/>
-        </Container>
+        <ResultsList results={[]} ref={resultsList}/>
         <PhotoDrawer ref={photoDrawer}/>
       </Container>
   </React.StrictMode>
