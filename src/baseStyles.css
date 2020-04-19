@@ -16,13 +16,8 @@
 
 h1,h2,h3,h4,h5,h6{
     text-align: center;
-    color: #3895D3;
-}
-
-.welcome-title{
-    font-size: 72px;
-    font-family: Palatino, "Palatino LT STD", "Palatino Linotype", "Book Antiqua", Georgia, serif;
-    color: steelblue;
+    color: #50394c;
+    padding-top: 2rem;
 }
 
 div.card-container{

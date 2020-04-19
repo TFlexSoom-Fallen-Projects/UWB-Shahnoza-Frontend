@@ -5,10 +5,15 @@
  *
  */
 
+.upload-buttons{
+    width: 10rem;
+    height: 10rem;
+    padding-right: 3rem;
+    padding-left: 3rem;
+}
 
 .upload-form{
     display: flex;
-    flex-direction: column;
     align-items: center;
 }
 
@@ -16,6 +21,12 @@
     margin: 20px;
 }
 
+.bigicon{
+  transform: scale(3);
+}
+.entericon{
+  transform: scale(2.7);
+}
 
 .upload-form .file-input{
     margin-top: 5px;

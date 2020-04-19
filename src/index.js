@@ -5,23 +5,27 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Container from "@material-ui/core/Container";
 import ReactUploadImage from './Components/ReactUploadImage.jsx';
 import AppNavBar from "./Components/AppNavBar.jsx";
-import PictureOptionCard from "./Components/PictureOptionCard.jsx";
+import AppFooter from "./Components/AppFooter.jsx";
 import PhotoDrawer from "./Components/PhotoDrawer";
 import ResultsList from "./Components/ResultsList";
+import Typography from '@material-ui/core/Typography';
+import 'typeface-roboto';
 import "./baseStyles.css";
 
+import testoutput from './output.json'
 
-var domainName = "http://www.shahnoza.tech";
+var domainName = "http://localhost.80";
 var photoDrawer = React.createRef(); // undefined until photo drawer instance
 var resultsList = React.createRef();
 
 function newResults(results){
-  if(results === null){
+  resultsList.current.changeResults(testoutput);
+  /*if(results === null){
     console.error("No Results!");
     return;
   }
   console.log(results.data);
-  resultsList.current.changeResults(results.data);
+  resultsList.current.changeResults(results.data);*/
 }
 
 function onClickChangeDrawer(e){
@@ -32,18 +36,15 @@ export default function ShahnozaApplication() {
   return (
   <React.StrictMode>
       <CssBaseline />
-      <AppNavBar></AppNavBar>
-      <Container maxWidth="lg" id="main-container">
-        <WelcomeTitle text="Welcome to Shahnoza"/>
-        <Container className="card-container">
-        <ReactUploadImage onResponse={newResults} url={domainName + "/upload"} formClass="app-form" />
-          <PictureOptionCard onClick={onClickChangeDrawer}/>
-        </Container>
-        <Container maxWidth="md">
-          <ResultsList results={[]} ref={resultsList}/>
-        </Container>
+      <AppNavBar />
+      <Container width="100%" id="main-container">
+        <Typography variant="h1">Welcome to #snza</Typography>
+        <Typography variant="h6">Upload a file or take a photo to begin.</Typography>
+        <ReactUploadImage onResponse={newResults} onCameraClick={onClickChangeDrawer} url={domainName + "/upload"} formClass="app-form" />
+        <ResultsList results={[]} ref={resultsList}  />
         <PhotoDrawer ref={photoDrawer} url={domainName + "/upload"} onResponse={newResults}/>
       </Container>
+      <AppFooter />
   </React.StrictMode>
   );
 }

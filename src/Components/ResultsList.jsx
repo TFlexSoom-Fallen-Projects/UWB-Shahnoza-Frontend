@@ -7,6 +7,7 @@
 
 import React from "react";
 import Grid from "@material-ui/core/Grid";
+import Result from './Result';
 import Paper from "@material-ui/core/Paper";
 
 class ResultsList extends React.Component{
@@ -32,17 +33,19 @@ class ResultsList extends React.Component{
         }else{
 
             const resultsItems = this.state.results.map((result, index) => 
-                <Paper key={index} elevation={3}>
+                <Result {... result} />
+
+                /*<Paper key={index} elevation={3}>
                     <a className="result-anchor-container" href={result.url}>
                         <img className="result-pic" width="100%" src={result.imgsrc} alt={"Shows the item: " + result.name + " for sale!"}></img>
                         <p className="result-name">{result.name}</p>
                         <p className="result-price">{result.price}</p>
                     </a>
-                </Paper> 
+                </Paper> */
             );
 
             return (
-                <Grid container spacing={5}>
+                <Grid container spacing={1} width="100%" flexDirection="row" flexWrap="wrap">
                     {resultsItems}
                 </Grid>
             )
